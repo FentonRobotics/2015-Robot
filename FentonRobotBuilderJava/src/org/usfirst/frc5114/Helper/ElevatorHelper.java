@@ -173,6 +173,7 @@ public class ElevatorHelper
 		System.out.println("Timer reset");
 		// reset the timer so the ramp will work again
 		timer.reset();
+		timer.start();
 	}
 
 	/**
