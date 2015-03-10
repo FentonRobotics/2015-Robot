@@ -1,0 +1,10 @@
+
+The wpilib plugin adds some classpath variables to your workspace, so if you've deleted yours or have created a new one, you'll need to add them again.
+
+If you create a new Robot Java Project the wpilib plugin will automatically add the classpath variables. Otherwise, follow the steps below to add them manually:
+Open the Preferences window and navigate to: Java > Build Path > Classpath Variables
+Add the following classpath variables, substituting <User> with your username:
+networktables: C:/Users/<User>/wpilib/java/current/lib/NetworkTables.jar
+networktables.sources: C:/Users/<User>/wpilib/java/current/lib/NetworkTables-sources.jar
+wpilib: C:/Users/<User>/wpilib/java/current/lib/WPILib.jar
+wpilib.sources: C:/Users/<User>/wpilib/java/current/lib/WPILib-sources.jar
