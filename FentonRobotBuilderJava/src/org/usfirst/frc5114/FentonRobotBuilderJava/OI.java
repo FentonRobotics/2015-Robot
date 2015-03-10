@@ -69,11 +69,11 @@ public class OI {
         controller = new Joystick(2);
         
         manipulatorButton4 = new JoystickButton(controller, 4);
-        manipulatorButton4.whileHeld(new dropFrontElevator());
+        manipulatorButton4.whileHeld(new DropFrontElevator());
         manipulatorButton2 = new JoystickButton(controller, 2);
         manipulatorButton2.whileHeld(new LiftFrontElevator());
         manipulatorButton3 = new JoystickButton(controller, 3);
-        manipulatorButton3.whileHeld(new dropRearElevator());
+        manipulatorButton3.whileHeld(new DropRearElevator());
         manipulatorButton7 = new JoystickButton(controller, 7);
         manipulatorButton7.whenPressed(new StopLiftingRearElevator());
         manipulatorButton1 = new JoystickButton(controller, 1);
@@ -103,13 +103,13 @@ public class OI {
 
         SmartDashboard.putData("StopLiftingRearElevator", new StopLiftingRearElevator());
 
-        SmartDashboard.putData("dropRearElevator", new dropRearElevator());
+        SmartDashboard.putData("dropRearElevator", new DropRearElevator());
 
         SmartDashboard.putData("LiftFrontElevator", new LiftFrontElevator());
 
-        SmartDashboard.putData("dropFrontElevator", new dropFrontElevator());
+        SmartDashboard.putData("dropFrontElevator", new DropFrontElevator());
 
-        SmartDashboard.putData("stopFrontElevator", new stopFrontElevator());
+        SmartDashboard.putData("stopFrontElevator", new StopFrontElevator());
 
         SmartDashboard.putData("Autonomous CommandGroup", new AutonomousCommandGroup());
 

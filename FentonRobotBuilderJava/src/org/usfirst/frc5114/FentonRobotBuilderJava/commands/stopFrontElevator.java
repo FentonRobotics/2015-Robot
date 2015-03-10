@@ -17,9 +17,9 @@ import org.usfirst.frc5114.FentonRobotBuilderJava.Robot;
 /**
  *
  */
-public class  stopFrontElevator extends Command {
+public class  StopFrontElevator extends Command {
 
-    public stopFrontElevator() {
+    public StopFrontElevator() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
