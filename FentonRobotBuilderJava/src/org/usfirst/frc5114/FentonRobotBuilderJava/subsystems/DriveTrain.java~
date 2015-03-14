@@ -80,18 +80,13 @@ public class DriveTrain extends Subsystem {
 	
 	 public void driveInDirection(Direction direction)
 	 {
-	 	if (direction == Direction.NORTH || direction == Direction.SOUTH)
+	 	if (direction == Direction.NORTH)
 	 	{
-	 		// use Tank Drive
-	 		double Kp = .03;
-	
-	 		// Get the current heading
-	 		double angle = 0;//gyro1.getAngle();
-	
-	 		SmartDashboard.putNumber("Robot gyro angle", angle);
-	
-	 		// turn to correct heading
-	 		tankdriveonly(-0.25, directionHelper(direction) - angle * Kp);
+	 		robotDrive21.tankDrive(0.25, 0.25);
+	 	}
+	 	else if (direction == Direction.SOUTH)
+	 	{
+	 		robotDrive21.tankDrive(-0.25, -0.25);
 	 	}
 	 	else if (direction == Direction.EAST)
 	 	{
