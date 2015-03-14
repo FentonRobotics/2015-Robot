@@ -72,21 +72,21 @@ public class OI {
         controller = new Joystick(2);
         
         manipulatorButton6 = new JoystickButton(controller, 6);
-        manipulatorButton6.whileHeld(new DropBinArm());
+        manipulatorButton6.whenPressed(new DropBinArm());
         manipulatorButton5 = new JoystickButton(controller, 5);
-        manipulatorButton5.whileHeld(new LiftBinArm());
+        manipulatorButton5.whenPressed(new LiftBinArm());
         manipulatorButton9 = new JoystickButton(controller, 9);
         manipulatorButton9.whileHeld(new DriveSouth());
         manipulatorButton4 = new JoystickButton(controller, 4);
-        manipulatorButton4.whileHeld(new DropRearElevator());
+        manipulatorButton4.whenPressed(new DropRearElevator());
         manipulatorButton2 = new JoystickButton(controller, 2);
-        manipulatorButton2.whileHeld(new LiftRearElevator());
+        manipulatorButton2.whenPressed(new LiftRearElevator());
         manipulatorButton3 = new JoystickButton(controller, 3);
-        manipulatorButton3.whileHeld(new DropFrontElevator());
+        manipulatorButton3.whenPressed(new DropFrontElevator());
         manipulatorButton8 = new JoystickButton(controller, 8);
         manipulatorButton8.whenPressed(new StopEverythingGroup());
         manipulatorButton1 = new JoystickButton(controller, 1);
-        manipulatorButton1.whileHeld(new LiftFrontElevator());
+        manipulatorButton1.whenPressed(new LiftFrontElevator());
         manipulatorButton7 = new JoystickButton(controller, 7);
         manipulatorButton7.whileHeld(new DriveNorth());
         leftJoystick = new Joystick(1);

@@ -78,27 +78,27 @@ public class DriveTrain extends Subsystem {
 	 	robotDrive2Perpendicular.tankDrive(0.0, 0.0);
 	 }
 	
-	 public void driveInDirection(Direction direction)
+	 public void driveInDirection(Direction direction, double speed)
 	 {
 	 	if (direction == Direction.NORTH)
 	 	{
-	 		robotDrive21.tankDrive(0.25, 0.25);
+	 		robotDrive21.tankDrive(-1 * speed, -1 * speed);
 	 	}
 	 	else if (direction == Direction.SOUTH)
 	 	{
-	 		robotDrive21.tankDrive(-0.25, -0.25);
+	 		robotDrive21.tankDrive(speed, speed);
 	 	}
 	 	else if (direction == Direction.EAST)
 	 	{
 	 		// somehow we should rotate the bot until it is facing NORTH before we do this
 	 		// otherwise it won't be going east, it will just be going to the right
-	 		robotDrive2Perpendicular.tankDrive(-0.25, 0.0);
+	 		robotDrive2Perpendicular.tankDrive(-1 * speed, 0.0);
 	 	}
 	 	else if (direction == Direction.WEST)
 	 	{
 	 		// somehow we should rotate the bot until it is facing NORTH before we do this
 	 		// otherwise it won't be going west, it will just be going to the left
-	 		robotDrive2Perpendicular.tankDrive(0.25, 0.0);
+	 		robotDrive2Perpendicular.tankDrive(speed, 0.0);
 	 	}
 	
 	 	// keep driving a small amount of time before we exit this function 

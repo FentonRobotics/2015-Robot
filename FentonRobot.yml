@@ -196,6 +196,22 @@ Children:
         name: Default Command, type: Command, validators: null, value: None}
     Base: Subsystem
     Name: BinArm
+  - Children:
+    - Children: []
+      Properties:
+        Input Channel (Analog): !!robotbuilder.data.properties.ChoicesProperty
+          choices: ['0', '1', '2', '3', '4', '5', '6', '7']
+          default: '0'
+          name: Input Channel (Analog)
+          validators: [AnalogInput]
+          value: '0'
+      Base: Analog Input
+      Name: Analog Input 0
+    Properties:
+      Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Default Command, type: Command, validators: null, value: None}
+    Base: Subsystem
+    Name: Switch
   Properties: {}
   Base: Subsystems
   Name: Subsystems
@@ -267,7 +283,7 @@ Children:
           default: whileHeld
           name: When to Run
           validators: null
-          value: whileHeld
+          value: whenPressed
       Base: Joystick Button
       Name: Manipulator Button 1
     - Children: []
@@ -315,7 +331,7 @@ Children:
           default: whileHeld
           name: When to Run
           validators: null
-          value: whileHeld
+          value: whenPressed
       Base: Joystick Button
       Name: Manipulator Button 3
     - Children: []
@@ -339,7 +355,7 @@ Children:
           default: whileHeld
           name: When to Run
           validators: null
-          value: whileHeld
+          value: whenPressed
       Base: Joystick Button
       Name: Manipulator Button 2
     - Children: []
@@ -363,7 +379,7 @@ Children:
           default: whileHeld
           name: When to Run
           validators: null
-          value: whileHeld
+          value: whenPressed
       Base: Joystick Button
       Name: Manipulator Button 4
     - Children: []
@@ -411,7 +427,7 @@ Children:
           default: whileHeld
           name: When to Run
           validators: null
-          value: whileHeld
+          value: whenPressed
       Base: Joystick Button
       Name: Manipulator Button 5
     - Children: []
@@ -435,7 +451,7 @@ Children:
           default: whileHeld
           name: When to Run
           validators: null
-          value: whileHeld
+          value: whenPressed
       Base: Joystick Button
       Name: Manipulator Button 6
     Properties:
