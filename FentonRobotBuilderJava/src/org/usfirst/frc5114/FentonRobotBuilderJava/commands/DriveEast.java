@@ -11,6 +11,7 @@
 
 package org.usfirst.frc5114.FentonRobotBuilderJava.commands;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc5114.FentonRobotBuilderJava.Robot;
@@ -20,6 +21,13 @@ import org.usfirst.frc5114.FentonRobotBuilderJava.subsystems.DriveTrain.Directio
  *
  */
 public class  DriveEast extends Command {
+	Timer t = new Timer();
+	double dt = 0.0;
+	public void setDriveTime (double driveTime)
+	{
+		dt = driveTime;
+	}
+	
 
     public DriveEast() {
         // Use requires() here to declare subsystem dependencies
@@ -33,6 +41,8 @@ public class  DriveEast extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	t.reset();
+    	t.start();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -42,7 +52,15 @@ public class  DriveEast extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+    	if (t.get() > dt)
+    	{
+    		t.stop();
+    		return true;
+    	}
+    	else
+    	{
+    		return false;
+    	}
     }
 
     // Called once after isFinished returns true
