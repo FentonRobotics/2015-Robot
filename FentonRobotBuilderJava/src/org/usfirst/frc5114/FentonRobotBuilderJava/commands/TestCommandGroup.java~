@@ -12,6 +12,8 @@
 package org.usfirst.frc5114.FentonRobotBuilderJava.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
+import edu.wpi.first.wpilibj.Timer;
+
 /**
  *
  */
@@ -36,6 +38,8 @@ public class TestCommandGroup extends CommandGroup {
         // arm.
     	
     	addSequential(new DriveNorth());
+    	Timer.delay(0.01);
+    	addSequential(new DriveSouth());
     	
     }
 }

@@ -1,5 +1,7 @@
 package org.usfirst.frc5114.FentonRobotBuilderJava.commands;
 
+import org.usfirst.frc5114.FentonRobotBuilderJava.Robot;
+
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
@@ -13,14 +15,6 @@ public class AutonomousCommandGroup extends CommandGroup {
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
         // these will run in order.
-    	//addSequential(new DriveSouth());
-    	System.out.println("auton step 1");
-    	//Timer.delay(0.5);
-    	System.out.println("auton step 2");
-    	//addSequential(new DriveNorth());
-    	System.out.println("auton step 3");
-    	//Timer.delay(0.5);
-    	System.out.println("auton step 4");
 
         // To run multiple commands at the same time,
         // use addParallel()
@@ -33,5 +27,40 @@ public class AutonomousCommandGroup extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
+    	switch (Robot.autonSwitch.mode())
+    	{
+    		case 0:
+    		{
+    	    	DriveSouth ds = new DriveSouth();
+    	    	ds.setDriveTime(0.5);
+    	    	addSequential(ds);
+    	    	System.out.println("auton step 1");
+    	    	
+    	    	DriveNorth dn = new DriveNorth();
+    	    	dn.setDriveTime(0.5);
+    	    	addSequential(dn);
+    	    	System.out.println("auton step 2");
+    	    	break;
+    		}
+    		case 1:
+    		{
+    			//lift bin
+    			
+    			//DiveEast
+    			DriveEast de = new DriveEast();
+    			de.setDriveTime(driveTime);
+    			addSequential(de);
+    			
+    			//DriveSouth
+    			
+    		
+    			break;
+    		}
+    		default:
+    		{
+    			System.out.println("Invalid Mode");
+    			break;
+    		}
+    	}
     }
 }

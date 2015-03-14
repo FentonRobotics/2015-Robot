@@ -29,22 +29,39 @@ public class AutonomousCommandGroup extends CommandGroup {
         // arm.
     	switch (Robot.autonSwitch.mode())
     	{
-    		case 0:
+    		case 1:
     		{
     	    	DriveSouth ds = new DriveSouth();
-    	    	ds.setDriveTime(0.5);
+    	    	ds.setDriveTime(2.0);
     	    	addSequential(ds);
     	    	System.out.println("auton step 1");
     	    	
     	    	DriveNorth dn = new DriveNorth();
-    	    	dn.setDriveTime(0.5);
+    	    	dn.setDriveTime(2.0);
     	    	addSequential(dn);
     	    	System.out.println("auton step 2");
     	    	break;
     		}
-    		case 1:
+    		case 0:
     		{
+    			//lift bin
+    			//2.419s at 0.75
+    			
+    			//DiveEast
+    			DriveEast de = new DriveEast();
+    			de.setDriveTime(2.951);
+    			addSequential(de);
+    			
+    			//DriveSouth
+    			DriveSouth ds = new DriveSouth();
+    			ds.setDriveTime(1.001);
+    			addSequential(ds);
     		
+    			break;
+    		}
+    		default:
+    		{
+    			System.out.println("Invalid Mode");
     			break;
     		}
     	}

@@ -73,7 +73,7 @@ public class OI {
         controller = new Joystick(2);
         
         manipulatorButton10 = new JoystickButton(controller, 10);
-        manipulatorButton10.whenPressed(new AutonomousCommandGroup());
+        manipulatorButton10.whileHeld(new TestCommandGroup());
         manipulatorButton6 = new JoystickButton(controller, 6);
         manipulatorButton6.whenPressed(new DropBinArm());
         manipulatorButton5 = new JoystickButton(controller, 5);

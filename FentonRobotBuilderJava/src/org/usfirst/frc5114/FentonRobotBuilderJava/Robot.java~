@@ -49,7 +49,7 @@ public class Robot extends IterativeRobot {
     public static int CushyStopSteps = 5;
     public static double StopRampFactor  = 2.0;  
         
-    public static double AutonSpeed = 0.5;
+    public static double AutonSpeed = 0.6;
     
     
     /**
