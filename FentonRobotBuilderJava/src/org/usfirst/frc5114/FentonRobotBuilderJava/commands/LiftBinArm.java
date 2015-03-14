@@ -12,7 +12,9 @@
 package org.usfirst.frc5114.FentonRobotBuilderJava.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc5114.FentonRobotBuilderJava.Robot;
+import org.usfirst.frc5114.FentonRobotBuilderJava.RobotMap;
 
 /**
  *
@@ -31,10 +33,12 @@ public class  LiftBinArm extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.binArm.eh.initialize();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.binArm.eh.lift();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -44,10 +48,12 @@ public class  LiftBinArm extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.binArm.eh.cushyStop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	Robot.binArm.eh.cushyStop();
     }
 }

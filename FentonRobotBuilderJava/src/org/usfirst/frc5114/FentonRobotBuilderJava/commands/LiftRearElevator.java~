@@ -40,6 +40,8 @@ public class  LiftRearElevator extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
+		System.out.println("LiftRearElevator");		
+
     	//Robot.backElevator.eh.enableLogging();
     	Robot.backElevator.eh.lift();
     }
@@ -53,13 +55,13 @@ public class  LiftRearElevator extends Command {
     // Called once after isFinished returns true
     protected void end() 
     {
-    	//Robot.backElevator.eh.cushyStop();
+    	Robot.backElevator.eh.cushyStop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() 
     {
-    	//Robot.backElevator.eh.cushyStop();
+    	Robot.backElevator.eh.cushyStop();
     }
 }

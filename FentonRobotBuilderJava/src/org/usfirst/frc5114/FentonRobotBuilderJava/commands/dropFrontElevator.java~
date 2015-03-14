@@ -12,6 +12,7 @@
 package org.usfirst.frc5114.FentonRobotBuilderJava.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc5114.FentonRobotBuilderJava.Robot;
 
 /**
@@ -38,6 +39,8 @@ public class  DropFrontElevator extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
+    	System.out.println("DropFrontElevator - execute");
+    	
     	Robot.frontElevator.eh.drop();
     }
 

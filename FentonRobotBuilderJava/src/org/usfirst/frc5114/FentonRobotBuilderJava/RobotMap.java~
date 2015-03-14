@@ -72,10 +72,10 @@ public class RobotMap {
         driveTrainRobotDrive2Perpendicular.setMaxOutput(1.0);
         
 
-        frontElevatorFrontElevatorController = new VictorSP(6);
+        frontElevatorFrontElevatorController = new VictorSP(3);
         LiveWindow.addActuator("Front Elevator", "FrontElevatorController", (VictorSP) frontElevatorFrontElevatorController);
         
-        backElevatorRearElevatorController = new VictorSP(3);
+        backElevatorRearElevatorController = new VictorSP(4);
         LiveWindow.addActuator("Back Elevator", "RearElevatorController", (VictorSP) backElevatorRearElevatorController);
         
         binArmBinArmController = new VictorSP(5);
