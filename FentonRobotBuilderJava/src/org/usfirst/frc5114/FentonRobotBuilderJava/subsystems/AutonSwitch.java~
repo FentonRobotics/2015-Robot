@@ -32,7 +32,8 @@ public class AutonSwitch extends Subsystem {
     // here. Call these from Commands.
     public int mode ()
     {
-    	double volts = analogInput0.getVoltage();
+    	double volts = analogInput0.getAverageVoltage();
+    	System.out.println(volts);
     	if (volts > 2.5)
     	{
     		return 1;
