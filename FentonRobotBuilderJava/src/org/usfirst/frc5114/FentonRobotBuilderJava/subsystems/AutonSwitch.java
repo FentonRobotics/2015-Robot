@@ -34,11 +34,16 @@ public class AutonSwitch extends Subsystem {
     {
     	double volts = analogInput0.getAverageVoltage();
     	System.out.println(volts);
-    	if (volts > 3.3)
+    	System.out.println(volts);
+    	if (volts > 3.75)
+    	{
+    		return 3;
+    	}
+    	else if (volts > 2.5)
     	{
     		return 2;
     	}
-    	else if (volts > 1.7)
+    	else if (volts > 1.25)
     	{
     		return 1;
     	}

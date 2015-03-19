@@ -32,7 +32,9 @@ public class AutonomousCommandGroup extends CommandGroup {
     	{
     		case 0:
     		{
-    			/* // Drive South for 2s
+    			// Test
+    			
+    			// Drive South for 2s
     	    	DriveSouth ds = new DriveSouth();
     	    	ds.setDriveTime(1.0);
     	    	addSequential(ds);
@@ -48,32 +50,121 @@ public class AutonomousCommandGroup extends CommandGroup {
     	    	DriveNorth dn = new DriveNorth();
     	    	dn.setDriveTime(1.0);
     	    	addSequential(dn);
-    	    	System.out.println("auton step 3"); */
-    			
-    			System.out.println("Case 0");
+    	    	System.out.println("auton step 3");
+    	    	
+    	    	// Stop for 0.25s
+    			addSequential(ts);
     			
     	    	break;
     		}
     		case 1:
     		{
-    			/* //lift bin
+    			// No Auton Points
+    			
+    			//lift bin
     			//2.419s at 0.75
     			AutonLiftRear rl = new AutonLiftRear();
     			rl.setLiftTime(2.419);
     			addSequential(rl);
     			
-    			//DiveEast
+    			// Stop for 0.25s
+    	    	TimedDriveStop ts = new TimedDriveStop();
+    	    	ts.setStopTime(0.25);
+    	    	addSequential(ts);
+    	    	System.out.println("auton step 2");
+    			
+    			//DiveEast for 2.951s
     			DriveEast de = new DriveEast();
     			de.setDriveTime(2.951);
     			addSequential(de);
     			
-    			//DriveSouth
+    			// Stop for 0.25s
+    	    	addSequential(ts);
+    			
+    			//DriveSouth 1.001s
     			DriveSouth ds = new DriveSouth();
     			ds.setDriveTime(1.001);
-    			addSequential(ds); */
+    			addSequential(ds);
+    			
+    			// Stop for 0.25s
+    			addSequential(ts);
     			
     			System.out.println("Case 1");
-    		
+    			
+    			break;
+    		}
+    		case 2:
+    		{
+    			// Move bin and tote into auton zone
+    			
+    			// Pick Up Bin(rear lift)
+    			AutonLiftRear lr = new AutonLiftRear();
+    			lr.setLiftTime(1.25);
+    			addSequential(lr);
+    			
+    			// Stop for 0.25s
+    	    	TimedDriveStop ts = new TimedDriveStop();
+    	    	ts.setStopTime(0.25);
+    	    	addSequential(ts);
+    			
+    			// Move Left
+    			DriveWest dw = new DriveWest();
+    			dw.setDriveTime(2.175);
+    			addSequential(dw);
+    			
+    			// Stop for 0.25s
+    			addSequential(ts);
+    			
+    			// Push Tote
+    			DriveSouth ds = new DriveSouth();
+    			ds.setDriveTime(4.0);
+    			addSequential(ds);
+    			
+    			// Stop for 0.25s
+    			addSequential(ts);
+    			
+    			System.out.println("Case 2");
+    			
+    			break;
+    		}
+    		case 3:
+    		{
+    			// Auton #4
+    			
+    			// South 7s
+    			DriveSouth ds = new DriveSouth();
+    			ds.setDriveTime(7.0);
+    			addSequential(ds);
+    			
+    			// Stop for 0.25s
+    	    	TimedDriveStop ts = new TimedDriveStop();
+    	    	ts.setStopTime(0.25);
+    	    	addSequential(ts);
+    	    	
+    			break;
+    		}
+    		case 4:
+    		{
+    			// Auton #5
+    			
+    			// Lift rear for 1s
+    			AutonLiftRear lr = new AutonLiftRear();
+    			lr.setLiftTime(1.0);
+    			addSequential(lr);
+    			
+    			// Stop for 0.25s
+    			TimedDriveStop ts = new TimedDriveStop();
+    			ts.setStopTime(0.25);
+    			addSequential(ts);
+    			
+    			// Drive south 60% 3.35s
+    			DriveSouth ds = new DriveSouth();
+    			ds.setDriveTime(3.35);
+    			addSequential(ds);
+    			
+    			// Stop for 0.25s
+    			addSequential(ts);
+    			
     			break;
     		}
     		default:

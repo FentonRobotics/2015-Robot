@@ -1,5 +1,6 @@
 package org.usfirst.frc5114.FentonRobotBuilderJava.commands;
 
+import org.usfirst.frc5114.AutonCommand.AutonCommand;
 import org.usfirst.frc5114.FentonRobotBuilderJava.Robot;
 
 import edu.wpi.first.wpilibj.Timer;
@@ -32,68 +33,161 @@ public class AutonomousCommandGroup extends CommandGroup {
     	{
     		case 0:
     		{
+    			new AutonCommand(AutonCommand.RobotCommandType.DriveNorth, 0.5, 1.0, AutonCommand.CommandSyncType.Sequential, this);
+    			new AutonCommand("DN,0.5,1.0,S", this);
+    			new AutonCommand("D0,0.0,.0125,S", this);
+    			new AutonCommand("DS,0.5,1.0,S", this);
+    			
+    			
+    			
+    			
+    			// Test
+    			
     			// Drive South for 2s
     	    	DriveSouth ds = new DriveSouth();
-    	    	ds.setDriveTime(1.0);
+    	    	ds.setTime(1.0);
     	    	addSequential(ds);
     	    	System.out.println("auton step 1");
     	    	
-    	    	// Stop for 0.25s
+    	    	// Stopdt for 0.25s
     	    	TimedDriveStop ts = new TimedDriveStop();
-    	    	ts.setStopTime(0.25);
+    	    	ts.setTime(0.25);
     	    	addSequential(ts);
     	    	System.out.println("auton step 2");
     	    	
     	    	// Drive North for 2s
     	    	DriveNorth dn = new DriveNorth();
-    	    	dn.setDriveTime(1.0);
+    	    	dn.setTime(1.0);
     	    	addSequential(dn);
     	    	System.out.println("auton step 3");
+    	    	
+    	    	// Stopdt for 0.25s
+    			addSequential(ts);
     			
     	    	break;
     		}
     		case 1:
     		{
+    			// No Auton Points
+    			
     			//lift bin
     			//2.419s at 0.75
     			AutonLiftRear rl = new AutonLiftRear();
-    			rl.setLiftTime(2.419);
+    			rl.setTime(2.419);
     			addSequential(rl);
+    			
+    			// Stop Rear Lift
+    			TimedRearLiftStop rs = new TimedRearLiftStop();
+    			rs.setTime(0.25);
+    			addSequential(rs);
+    			
+    			// Stopdt for 0.25s
+    	    	TimedDriveStop ts = new TimedDriveStop();
+    	    	ts.setTime(0.25);
+    	    	addSequential(ts);
+    	    	System.out.println("auton step 2");
     			
     			//DiveEast for 2.951s
     			DriveEast de = new DriveEast();
-    			de.setDriveTime(2.951);
+    			de.setTime(2.951);
     			addSequential(de);
+    			
+    			// Stopdt for 0.25s
+    	    	addSequential(ts);
     			
     			//DriveSouth 1.001s
     			DriveSouth ds = new DriveSouth();
-    			ds.setDriveTime(1.001);
+    			ds.setTime(1.001);
     			addSequential(ds);
     			
+    			// Stopdt for 0.25s
+    			addSequential(ts);
+    			
     			System.out.println("Case 1");
-    		
+    			
     			break;
     		}
     		case 2:
     		{
-    			// Other Auton Code * change all times
+    			// Move bin and tote into auton zone
     			
     			// Pick Up Bin(rear lift)
     			AutonLiftRear lr = new AutonLiftRear();
-    			lr.setLiftTime(1.0);
+    			lr.setTime(1.25);
     			addSequential(lr);
+    			
+    			// Stop Rear Lift
+    			TimedRearLiftStop rs = new TimedRearLiftStop();
+    			rs.setTime(0.25);
+    			addSequential(rs);
+    			
+    			// Stopdt for 0.25s
+    	    	TimedDriveStop ts = new TimedDriveStop();
+    	    	ts.setTime(0.25);
+    	    	addSequential(ts);
     			
     			// Move Left
     			DriveWest dw = new DriveWest();
-    			dw.setDriveTime(1.0);
+    			dw.setTime(2.175);
     			addSequential(dw);
     			
+    			// Stopdt for 0.25s
+    			addSequential(ts);
+    			
     			// Push Tote
-    			DriveNorth dn = new DriveNorth();
-    			dn.setDriveTime(1.0);
-    			addSequential(dn);
+    			DriveSouth ds = new DriveSouth();
+    			ds.setTime(4.0);
+    			addSequential(ds);
+    			
+    			// Stopdt for 0.25s
+    			addSequential(ts);
     			
     			System.out.println("Case 2");
+    			
+    			break;
+    		}
+    		case 3:
+    		{
+    			// Auton #4
+    			
+    			// South 7s
+    			DriveSouth ds = new DriveSouth();
+    			ds.setTime(7.0);
+    			addSequential(ds);
+    			
+    			// Stopdt for 0.25s
+    	    	TimedDriveStop ts = new TimedDriveStop();
+    	    	ts.setTime(0.25);
+    	    	addSequential(ts);
+    	    	
+    			break;
+    		}
+    		case 4:
+    		{
+    			// Auton #5
+    			
+    			// Lift rear for 1s
+    			AutonLiftRear lr = new AutonLiftRear();
+    			lr.setTime(1.0);
+    			addSequential(lr);
+    			
+    			// Stop Rear Lift
+    			TimedRearLiftStop rs = new TimedRearLiftStop();
+    			rs.setTime(0.25);
+    			addSequential(rs);
+    			
+    			// Stopdt for 0.25s
+    			TimedDriveStop ts = new TimedDriveStop();
+    			ts.setTime(0.25);
+    			addSequential(ts);
+    			
+    			// Drive south 60% 3.35s
+    			DriveSouth ds = new DriveSouth();
+    			ds.setTime(3.35);
+    			addSequential(ds);
+    			
+    			// Stopdt for 0.25s
+    			addSequential(ts);
     			
     			break;
     		}

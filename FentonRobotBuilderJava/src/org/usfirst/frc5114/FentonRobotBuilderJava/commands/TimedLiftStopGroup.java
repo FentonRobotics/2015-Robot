@@ -10,14 +10,15 @@
 
 
 package org.usfirst.frc5114.FentonRobotBuilderJava.commands;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
  *
  */
-public class StopEverythingGroup extends CommandGroup {
+public class TimedLiftStopGroup extends CommandGroup {
     
-    public  StopEverythingGroup() {
+    public  TimedLiftStopGroup() {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -28,19 +29,11 @@ public class StopEverythingGroup extends CommandGroup {
         // e.g. addParallel(new Command1());
         //      addSequential(new Command2());
         // Command1 and Command2 will run in parallel.
-		
+
         // A command group will require all of the subsystems that each member
         // would require.
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-    	
-    	System.out.println("StopEverythingGroup");		
-    	
-    	addParallel(new StopFrontElevator());
-    	addParallel(new StopLiftingRearElevator());
-    	addParallel(new StopBinArm());
-    	
-    	
     }
 }

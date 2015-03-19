@@ -23,9 +23,14 @@ import org.usfirst.frc5114.FentonRobotBuilderJava.subsystems.DriveTrain.Directio
 public class  DriveEast extends Command {
 	Timer t = new Timer();
 	double dt = 0.0;
-	public void setDriveTime (double driveTime)
+	public void setTime (double driveTime)
 	{
 		dt = driveTime;
+	}
+	double spd = 0.0;
+	public void setSpeed (double driveSpeed)
+	{
+		spd = driveSpeed;
 	}
 	
 
@@ -47,7 +52,7 @@ public class  DriveEast extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.driveTrain.driveInDirection(Direction.EAST, Robot.AutonSpeed);
+    	Robot.driveTrain.driveInDirection(Direction.EAST, spd);
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -48,9 +48,7 @@ public class Robot extends IterativeRobot {
     public static double MaxElevatorSpeed = 0.75;
     public static double RampTimeInSeconds = 0.75;
     public static int CushyStopSteps = 5;
-    public static double StopRampFactor  = 2.0;  
-        
-    public static double AutonSpeed = 0.6;
+    public static double StopRampFactor  = 2.0;
     
     
     /**

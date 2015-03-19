@@ -21,10 +21,15 @@ import org.usfirst.frc5114.FentonRobotBuilderJava.Robot;
 public class  AutonLiftRear extends Command {
 	Timer t = new Timer();
 	double lt = 0.0;
-	public void setLiftTime(double liftTime)
+	public void setTime(double liftTime)
 	{
 		lt = liftTime;
 	}
+	public void setSpeed (double maxspd)
+	{
+		Robot.backElevator.eh.setMaxSpeed(maxspd);
+	}
+	
 	
 
     public AutonLiftRear() {
