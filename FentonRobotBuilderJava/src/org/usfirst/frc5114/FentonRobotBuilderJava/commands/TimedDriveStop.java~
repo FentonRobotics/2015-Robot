@@ -21,7 +21,7 @@ import org.usfirst.frc5114.FentonRobotBuilderJava.Robot;
 public class  TimedDriveStop extends Command {
 	Timer t = new Timer();
 	double st = 0.0;
-	public void setStopTime (double stopTime)
+	public void setTime (double stopTime)
 	{
 		st = stopTime;
 	}

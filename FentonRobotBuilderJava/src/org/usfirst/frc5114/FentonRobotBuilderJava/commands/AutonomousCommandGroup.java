@@ -40,7 +40,6 @@ public class AutonomousCommandGroup extends CommandGroup {
     			
     			
     			
-    			
     			// Test
     			
     			// Drive South for 2s
@@ -164,30 +163,23 @@ public class AutonomousCommandGroup extends CommandGroup {
     		}
     		case 4:
     		{
-    			// Auton #5
+    			/* // Auton #5
     			
     			// Lift rear for 1s
-    			AutonLiftRear lr = new AutonLiftRear();
-    			lr.setTime(1.0);
-    			addSequential(lr);
+    			new AutonCommand("RL,0.75,1.0,S", this);
     			
     			// Stop Rear Lift
-    			TimedRearLiftStop rs = new TimedRearLiftStop();
-    			rs.setTime(0.25);
-    			addSequential(rs);
-    			
-    			// Stopdt for 0.25s
-    			TimedDriveStop ts = new TimedDriveStop();
-    			ts.setTime(0.25);
-    			addSequential(ts);
+    			new AutonCommand("RS,0.0,0.125,S", this);
     			
     			// Drive south 60% 3.35s
-    			DriveSouth ds = new DriveSouth();
-    			ds.setTime(3.35);
-    			addSequential(ds);
+    			new AutonCommand("DS,0.6,2.73,S", this);
     			
     			// Stopdt for 0.25s
-    			addSequential(ts);
+    			new AutonCommand("RL,0.0,0.125,S", this);
+    			*/
+    			
+    			new AutonCommand("DW,0.75,5.0,S", this);
+    			new AutonCommand("DW,0.0,0.125,S", this);
     			
     			break;
     		}

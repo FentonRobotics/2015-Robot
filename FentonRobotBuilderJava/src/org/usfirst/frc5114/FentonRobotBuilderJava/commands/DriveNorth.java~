@@ -24,9 +24,14 @@ import edu.wpi.first.wpilibj.Timer;
 public class  DriveNorth extends Command {
 	Timer t = new Timer();
 	double dt = 0.0;
-	public void setDriveTime (double driveTime)
+	public void setTime (double driveTime)
 	{
 		dt = driveTime;
+	}
+	double spd = 0.0;
+	public void setSpeed(double speed)
+	{
+		spd = speed;
 	}
 
     public DriveNorth() {
@@ -47,7 +52,7 @@ public class  DriveNorth extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.driveTrain.driveInDirection(Direction.NORTH, Robot.AutonSpeed);
+    	Robot.driveTrain.driveInDirection(Direction.NORTH, spd);
     }
 
     // Make this return true when this Command no longer needs to run execute()

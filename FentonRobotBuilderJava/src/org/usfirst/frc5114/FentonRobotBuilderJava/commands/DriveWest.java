@@ -22,12 +22,14 @@ import org.usfirst.frc5114.FentonRobotBuilderJava.subsystems.DriveTrain.Directio
  */
 public class  DriveWest extends Command {
 	Timer t = new Timer();
-	double dt = 0.0;
+	// Default time
+	double dt = 0.5;
 	public void setTime (double driveTime)
 	{
 		dt = driveTime;
 	}
-	double spd = 0.0;
+	// Default speed
+	double spd = 0.75;
 	public void setSpeed (double driveSpeed)
 	{
 		spd = driveSpeed;
@@ -52,17 +54,20 @@ public class  DriveWest extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	Robot.driveTrain.driveInDirection(Direction.WEST, spd);
+    	System.out.println("Drive West");
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
     	if (t.get() > dt)
     	{
+    		System.out.println("Is Finished");
     		t.stop();
     		return true;
     	}
     	else
     	{
+    		System.out.println("Not Finished");
     		return false;
     	}
     }
@@ -70,11 +75,13 @@ public class  DriveWest extends Command {
     // Called once after isFinished returns true
     protected void end() {
     	Robot.driveTrain.stop();
+    	System.out.println("End");
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	System.out.println("Interrupted");
     	Robot.driveTrain.stop();
     }
 }
