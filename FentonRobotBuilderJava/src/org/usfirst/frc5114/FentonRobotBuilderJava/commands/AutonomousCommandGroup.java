@@ -33,35 +33,21 @@ public class AutonomousCommandGroup extends CommandGroup {
     	{
     		case 0:
     		{
-    			new AutonCommand(AutonCommand.RobotCommandType.DriveNorth, 0.5, 1.0, AutonCommand.CommandSyncType.Sequential, this);
-    			new AutonCommand("DN,0.5,1.0,S", this);
-    			new AutonCommand("D0,0.0,.0125,S", this);
-    			new AutonCommand("DS,0.5,1.0,S", this);
-    			
-    			
+    			// new AutonCommand(AutonCommand.RobotCommandType.DriveNorth, 0.5, 1.0, AutonCommand.CommandSyncType.Sequential, this);
     			
     			// Test
     			
-    			// Drive South for 2s
-    	    	DriveSouth ds = new DriveSouth();
-    	    	ds.setTime(1.0);
-    	    	addSequential(ds);
-    	    	System.out.println("auton step 1");
+    	    	// Drive South for 1s at 60%
+    	    	new AutonCommand("DS,0.6,1.0,S", this);
     	    	
-    	    	// Stopdt for 0.25s
-    	    	TimedDriveStop ts = new TimedDriveStop();
-    	    	ts.setTime(0.25);
-    	    	addSequential(ts);
-    	    	System.out.println("auton step 2");
+    			// Stop drive train for 0.125s
+    			new AutonCommand("D0,0.0,0.125,S", this);
     	    	
-    	    	// Drive North for 2s
-    	    	DriveNorth dn = new DriveNorth();
-    	    	dn.setTime(1.0);
-    	    	addSequential(dn);
-    	    	System.out.println("auton step 3");
+    	    	// Drive North for 1s at 60%
+    	    	new AutonCommand("DN,0.6,1.0,S", this);
     	    	
-    	    	// Stopdt for 0.25s
-    			addSequential(ts);
+    			// Stop drive train for 0.125s
+    			new AutonCommand("D0,0.0,0.125,S", this);
     			
     	    	break;
     		}
@@ -69,38 +55,26 @@ public class AutonomousCommandGroup extends CommandGroup {
     		{
     			// No Auton Points
     			
-    			//lift bin
-    			//2.419s at 0.75
-    			AutonLiftRear rl = new AutonLiftRear();
-    			rl.setTime(2.419);
-    			addSequential(rl);
+    			//lift bin for 2.419s at 0.75
+    			new AutonCommand("RL,0.75,2.419,S", this);
     			
-    			// Stop Rear Lift
-    			TimedRearLiftStop rs = new TimedRearLiftStop();
-    			rs.setTime(0.25);
-    			addSequential(rs);
+    			// Stop Rear Lift for 0.125s
+    			new AutonCommand("RS,0.0,0.125,S", this);
     			
-    			// Stopdt for 0.25s
-    	    	TimedDriveStop ts = new TimedDriveStop();
-    	    	ts.setTime(0.25);
-    	    	addSequential(ts);
-    	    	System.out.println("auton step 2");
+    			// Stop drive train for 0.125s
+    			new AutonCommand("D0,0.0,0.125,S", this);
     			
-    			//DiveEast for 2.951s
-    			DriveEast de = new DriveEast();
-    			de.setTime(2.951);
-    			addSequential(de);
+    			// DiveEast for 2.951s at 75%
+    			new AutonCommand("DE,0.75,2.951,S", this);
     			
-    			// Stopdt for 0.25s
-    	    	addSequential(ts);
+    			// Stop drive train for 0.125s
+    			new AutonCommand("D0,0.0,0.125,S", this);
     			
-    			//DriveSouth 1.001s
-    			DriveSouth ds = new DriveSouth();
-    			ds.setTime(1.001);
-    			addSequential(ds);
+    			// DriveSouth for 1.001s at 60%
+    			new AutonCommand("DS,0.6,1.001,S", this);
     			
-    			// Stopdt for 0.25s
-    			addSequential(ts);
+    			// Stop drive train for 0.125s
+    			new AutonCommand("D0,0.0,0.125,S", this);
     			
     			System.out.println("Case 1");
     			
@@ -110,36 +84,26 @@ public class AutonomousCommandGroup extends CommandGroup {
     		{
     			// Move bin and tote into auton zone
     			
-    			// Pick Up Bin(rear lift)
-    			AutonLiftRear lr = new AutonLiftRear();
-    			lr.setTime(1.25);
-    			addSequential(lr);
+    			// Pick Up Bin(rear lift) for 1.25s at 75%
+    			new AutonCommand("RL,0.75,1.25,S", this);
     			
-    			// Stop Rear Lift
-    			TimedRearLiftStop rs = new TimedRearLiftStop();
-    			rs.setTime(0.25);
-    			addSequential(rs);
+    			// Stop Rear Lift for 0.125s
+    			new AutonCommand("RS,0.0,0.125,S", this);
     			
-    			// Stopdt for 0.25s
-    	    	TimedDriveStop ts = new TimedDriveStop();
-    	    	ts.setTime(0.25);
-    	    	addSequential(ts);
+    			// Stop drive train for 0.125s
+    			new AutonCommand("D0,0.0,0.125,S", this);
     			
-    			// Move Left
-    			DriveWest dw = new DriveWest();
-    			dw.setTime(2.175);
-    			addSequential(dw);
+    			// Move west for 2.175s at 75%
+    			new AutonCommand("DW,0.75,2.175,S", this);
     			
-    			// Stopdt for 0.25s
-    			addSequential(ts);
+    			// Stop drive train for 0.125s
+    			new AutonCommand("D0,0.0,0.125,S", this);
     			
-    			// Push Tote
-    			DriveSouth ds = new DriveSouth();
-    			ds.setTime(4.0);
-    			addSequential(ds);
+    			// Push Tote for 4s at 60%
+    			new AutonCommand("DS,0.6,4.0,S", this);
     			
-    			// Stopdt for 0.25s
-    			addSequential(ts);
+    			// Stop drive train for 0.125s
+    			new AutonCommand("D0,0.0,0.125,S", this);
     			
     			System.out.println("Case 2");
     			
@@ -149,15 +113,11 @@ public class AutonomousCommandGroup extends CommandGroup {
     		{
     			// Auton #4
     			
-    			// South 7s
-    			DriveSouth ds = new DriveSouth();
-    			ds.setTime(7.0);
-    			addSequential(ds);
+    			// South 7s at 60%
+    			new AutonCommand("DS,0.6,7.0,S", this);
     			
-    			// Stopdt for 0.25s
-    	    	TimedDriveStop ts = new TimedDriveStop();
-    	    	ts.setTime(0.25);
-    	    	addSequential(ts);
+    			// Stop drive train for 0.125s
+    	    	new AutonCommand("D0,0.0,0.125,S", this);
     	    	
     			break;
     		}
@@ -174,7 +134,7 @@ public class AutonomousCommandGroup extends CommandGroup {
     			// Drive south 60% 3.35s
     			new AutonCommand("DS,0.6,2.73,S", this);
     			
-    			// Stopdt for 0.25s
+    			// Stop drive train for 0.125s
     			new AutonCommand("RL,0.0,0.125,S", this);
 
     			break;

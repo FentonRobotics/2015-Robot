@@ -52,6 +52,14 @@ public class DriveTrain extends Subsystem {
     
 	 // Put methods for controlling this subsystem
 	 // here. Call these from Commands.
+    
+     // This function makes perpendicular drive only possible
+     // when pressing button 2 on right joystick
+     boolean allowPerpMvmt = false;
+	 public void changeToAllowPerpDrive (boolean allowPerpMovement)
+	 {
+		 allowPerpMvmt = allowPerpMovement;
+	 }
 	 public void takeJoystickInputs(Joystick left, Joystick right)
 	 {
 		// our robot is like 2 tank drive robots

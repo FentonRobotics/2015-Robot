@@ -18,7 +18,6 @@ import org.usfirst.frc5114.FentonRobotBuilderJava.Robot;
  *
  */
 public class  AllowPerpMovement extends Command {
-	boolean allowPerpMvmt = false;
 
     public AllowPerpMovement() {
         // Use requires() here to declare subsystem dependencies
@@ -35,7 +34,7 @@ public class  AllowPerpMovement extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	allowPerpMvmt = true;
+    	Robot.driveTrain.changeToAllowPerpDrive(true);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -45,12 +44,12 @@ public class  AllowPerpMovement extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	allowPerpMvmt = false;
+    	Robot.driveTrain.changeToAllowPerpDrive(false);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	allowPerpMvmt = false;
+    	Robot.driveTrain.changeToAllowPerpDrive(false);
     }
 }
