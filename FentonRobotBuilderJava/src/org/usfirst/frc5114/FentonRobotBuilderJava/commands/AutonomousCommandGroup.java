@@ -163,7 +163,7 @@ public class AutonomousCommandGroup extends CommandGroup {
     		}
     		case 4:
     		{
-    			/* // Auton #5
+    			// Auton #5
     			
     			// Lift rear for 1s
     			new AutonCommand("RL,0.75,1.0,S", this);
@@ -176,11 +176,7 @@ public class AutonomousCommandGroup extends CommandGroup {
     			
     			// Stopdt for 0.25s
     			new AutonCommand("RL,0.0,0.125,S", this);
-    			*/
-    			
-    			new AutonCommand("DW,0.75,5.0,S", this);
-    			new AutonCommand("DW,0.0,0.125,S", this);
-    			
+
     			break;
     		}
     		default:

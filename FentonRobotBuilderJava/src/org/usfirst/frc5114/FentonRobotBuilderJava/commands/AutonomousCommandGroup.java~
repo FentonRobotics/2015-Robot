@@ -178,7 +178,7 @@ public class AutonomousCommandGroup extends CommandGroup {
     			new AutonCommand("RL,0.0,0.125,S", this);
     			*/
     			
-    			new AutonCommand("DW,0.6,5.0,S", this);
+    			new AutonCommand("DW,0.75,5.0,S", this);
     			new AutonCommand("DW,0.0,0.125,S", this);
     			
     			break;

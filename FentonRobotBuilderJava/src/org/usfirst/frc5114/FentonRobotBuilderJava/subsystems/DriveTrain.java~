@@ -77,6 +77,9 @@ public class DriveTrain extends Subsystem {
 	 	robotDrive21.tankDrive(0.0, 0.0);
 	 	robotDrive2Perpendicular.tankDrive(0.0, 0.0);
 	 }
+	 
+	 //robotDrive21(N/S) = 238in / 5s = 47.6in/s at 60%
+	 //robotDrivePerpendicular(E/W) = 185in / 5s = 37in/s at 75%
 	
 	 public void driveInDirection(Direction direction, double speed)
 	 {
@@ -95,14 +98,14 @@ public class DriveTrain extends Subsystem {
 	 	{
 	 		// somehow we should rotate the bot until it is facing NORTH before we do this
 	 		// otherwise it won't be going east, it will just be going to the right
-	 		robotDrive2Perpendicular.tankDrive(-1 * speed, 0.0);
+	 		robotDrive2Perpendicular.tankDrive(speed, 0.0);
 	 		robotDrive21.tankDrive(0.0, 0.0);
 	 	}
 	 	else if (direction == Direction.WEST)
 	 	{
 	 		// somehow we should rotate the bot until it is facing NORTH before we do this
 	 		// otherwise it won't be going west, it will just be going to the left
-	 		robotDrive2Perpendicular.tankDrive(speed, 0.0);
+	 		robotDrive2Perpendicular.tankDrive(-1 * speed, 0.0);
 	 		robotDrive21.tankDrive(0.0, 0.0);
 	 	}
 	
