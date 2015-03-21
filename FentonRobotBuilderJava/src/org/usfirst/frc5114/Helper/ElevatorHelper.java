@@ -14,10 +14,10 @@ public class ElevatorHelper
 	private double maxElevatorSpeed = 0.75;
 	private double rampTimeInSeconds = 0.125;
 	
-	public void setMaxSpeed (double maxSpeed)
-	{
-		maxElevatorSpeed = maxSpeed;
-	}
+//	 public void setMaxSpeed (double maxSpeed)
+//	{
+//		maxElevatorSpeed = maxSpeed;
+//	}
 	/**
 	 * How many steps do we want in our cushy stop ramp.
 	 * The default value of 5 means that we will stop the motor in 5 equal steps

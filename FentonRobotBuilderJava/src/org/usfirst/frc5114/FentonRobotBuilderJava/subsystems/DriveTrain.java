@@ -66,14 +66,14 @@ public class DriveTrain extends Subsystem {
 		// with the right drive disabled on the second tank
 		// so we pass in 0.0 for the right side
 		robotDrive21.tankDrive(left, right, true);  // square the inputs
-		if (allowPerpMvmt == true)
-		{
+//		if (allowPerpMvmt)
+//		{
 			robotDrive2Perpendicular.tankDrive(right.getX(), 0.0, true); // square the inputs
-		}
-		else
-		{
-			robotDrive2Perpendicular.tankDrive(0.0, 0.0, true); // square the inputs
-		}
+//		}
+//		else
+//		{
+//			robotDrive2Perpendicular.tankDrive(0.0, 0.0, true); // square the inputs
+//		}
 	 }
 	
 	 // This is basically a pass through to the tank drive which is already built for us

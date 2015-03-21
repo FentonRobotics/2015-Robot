@@ -28,6 +28,7 @@ public class AutonomousCommandGroup extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
+    	
     	Robot.autonSwitch.mode();
     	switch (Robot.autonSwitch.mode())
     	{
@@ -54,15 +55,13 @@ public class AutonomousCommandGroup extends CommandGroup {
     		case 1:
     		{
     			// No Auton Points
+    			System.out.println("case 4");
     			
-    			//lift bin for 2.419s at 0.75
-    			new AutonCommand("RL,0.75,2.419,S", this);
+    			//lift bin for 2.0s at 0.75
+    			new AutonCommand("RL,0.75,2.0,S", this);
     			
     			// Stop Rear Lift for 0.125s
     			new AutonCommand("RS,0.0,0.125,S", this);
-    			
-    			// Stop drive train for 0.125s
-    			new AutonCommand("D0,0.0,0.125,S", this);
     			
     			// DiveEast for 2.951s at 75%
     			new AutonCommand("DE,0.75,2.951,S", this);
@@ -123,7 +122,7 @@ public class AutonomousCommandGroup extends CommandGroup {
     		}
     		case 4:
     		{
-    			// Auton #5
+    			// Auton #5, case 4
     			
     			// Lift rear for 1s
     			new AutonCommand("RL,0.75,1.0,S", this);

@@ -29,7 +29,7 @@ public class  DriveWest extends Command {
 		dt = driveTime;
 	}
 	// Default speed
-	double spd = 0.75;
+	double spd = 0.85;
 	public void setSpeed (double driveSpeed)
 	{
 		spd = driveSpeed;

@@ -88,7 +88,8 @@ public class AutonCommand
 				System.out.println("Command " + commandType + " not implemented yet."); break;
 			case LiftRearElevator:
 			{
-				AutonLiftRear command = new AutonLiftRear();				
+				AutonLiftRear command = new AutonLiftRear();
+//				command.setSpeed(speed);
 				command.setTime(time);
 				genericCommand = command;
 				break;
@@ -133,6 +134,7 @@ public class AutonCommand
 	 */
 	public AutonCommand(String autonCommandString, AutonomousCommandGroup autonCommandGroup)
 	{
+		System.out.println("Auton Command String: " + autonCommandString);
 		try
 		{
 			RobotCommandType commandType = null;
@@ -174,11 +176,12 @@ public class AutonCommand
 				// Rear elevator
 				case 'R':
 				{
+					System.out.println("Rear Elevator");
 					switch (commandList[0].charAt(1))
 					{
-						case 'L': commandType = RobotCommandType.LiftRearElevator; break;
-						case 'D': commandType = RobotCommandType.DropRearElevator; break;
-						case 'S': commandType = RobotCommandType.StopRearElevator; break;
+						case 'L': commandType = RobotCommandType.LiftRearElevator; System.out.println("Lift"); break;
+						case 'D': commandType = RobotCommandType.DropRearElevator; System.out.println("Drop"); break;
+						case 'S': commandType = RobotCommandType.StopRearElevator; System.out.println("Stop"); break;
 						default: System.out.println("Invalid robot rear elevator command string."); break; 
 					}
 					break;
@@ -202,12 +205,15 @@ public class AutonCommand
 			}
 			
 			speed = Double.parseDouble(commandList[1]);
+			System.out.println("Speed: " + speed);
+			
 			time = Double.parseDouble(commandList[2]);
+			System.out.println("Time: " + time);
 			
 			switch (commandList[3].charAt(0))
 			{
-				case 'S': syncType = CommandSyncType.Sequential; break;
-				case 'P': syncType = CommandSyncType.Parallel; break;
+				case 'S': syncType = CommandSyncType.Sequential; System.out.println("Sequential"); break;
+				case 'P': syncType = CommandSyncType.Parallel; System.out.println("Parallel"); break;
 				default: System.out.println("Invalid robot command string - syncType.");
 			}
 			

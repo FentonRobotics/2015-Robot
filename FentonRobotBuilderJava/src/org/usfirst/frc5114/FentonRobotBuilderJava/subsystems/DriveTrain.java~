@@ -52,13 +52,28 @@ public class DriveTrain extends Subsystem {
     
 	 // Put methods for controlling this subsystem
 	 // here. Call these from Commands.
+    
+     // This function makes perpendicular drive only possible
+     // when pressing button 2 on right joystick
+     boolean allowPerpMvmt = false;
+	 public void changeToAllowPerpDrive (boolean allowPerpMovement)
+	 {
+		 allowPerpMvmt = allowPerpMovement;
+	 }
 	 public void takeJoystickInputs(Joystick left, Joystick right)
 	 {
 		// our robot is like 2 tank drive robots
 		// with the right drive disabled on the second tank
 		// so we pass in 0.0 for the right side
 		robotDrive21.tankDrive(left, right, true);  // square the inputs
-		robotDrive2Perpendicular.tankDrive(right.getX(), 0.0, true); // square the inputs
+		if (allowPerpMvmt == true)
+		{
+			robotDrive2Perpendicular.tankDrive(right.getX(), 0.0, true); // square the inputs
+		}
+		else
+		{
+			robotDrive2Perpendicular.tankDrive(0.0, 0.0, true); // square the inputs
+		}
 	 }
 	
 	 // This is basically a pass through to the tank drive which is already built for us
