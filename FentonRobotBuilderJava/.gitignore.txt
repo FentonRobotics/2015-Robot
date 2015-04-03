@@ -2,3 +2,8 @@
 *.properties~
 *.build.xml~
 *.txt~
+build/
+bin/
+dist/
+BSD_License_for_WPILib_code.txt~
+**/*.*~
