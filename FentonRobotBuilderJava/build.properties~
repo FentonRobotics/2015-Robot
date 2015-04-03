@@ -1,5 +1,0 @@
-# Project specific information
-package=org.usfirst.frc5114.FentonRobotBuilderJava
-robot.class=${package}.Robot
-simulation.world.file=/usr/share/frcsim/worlds/GearsBotDemo.world
-
