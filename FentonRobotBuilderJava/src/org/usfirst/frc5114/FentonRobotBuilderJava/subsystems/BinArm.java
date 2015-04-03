@@ -43,5 +43,20 @@ public class BinArm extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    
+    public void drop()
+    {
+    	RobotMap.binArmBinArmController.set(-0.75);
+    }
+    
+    public void lift()
+    {
+    	RobotMap.binArmBinArmController.set(0.75);
+    }
+    
+    public void stop()
+    {
+    	RobotMap.binArmBinArmController.set(0);
+    } 
 }
 

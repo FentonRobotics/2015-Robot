@@ -44,6 +44,22 @@ public class FrontElevator extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    
+    public void drop()
+    {
+    	RobotMap.frontElevatorFrontElevatorController.set(-0.75);
+    }
+    
+    public void lift()
+    {
+    	RobotMap.frontElevatorFrontElevatorController.set(0.75);
+    }
+    
+    public void stop()
+    {
+    	RobotMap.frontElevatorFrontElevatorController.set(0);
+    }    
+    
 }
 
 

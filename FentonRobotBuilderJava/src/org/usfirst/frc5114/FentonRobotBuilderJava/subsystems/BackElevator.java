@@ -46,14 +46,19 @@ public class BackElevator extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
-    public void Lift()
+    public void drop()
+    {
+    	RobotMap.backElevatorRearElevatorController.set(-0.75);
+    }
+    
+    public void lift()
     {
     	RobotMap.backElevatorRearElevatorController.set(0.75);
     }
     
-    public void Stop()
+    public void stop()
     {
     	RobotMap.backElevatorRearElevatorController.set(0);
-    }
+    }    
 }
 

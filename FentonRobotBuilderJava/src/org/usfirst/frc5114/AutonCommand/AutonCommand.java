@@ -1,13 +1,17 @@
 /**
- * @author tomm
+ * @author Tom McAnnally FRC Team 5114 Fenton Tigers
  *
  */
 
-
 package org.usfirst.frc5114.AutonCommand;
 
-import org.usfirst.frc5114.FentonRobotBuilderJava.commands.AutonLiftRear;
 import org.usfirst.frc5114.FentonRobotBuilderJava.commands.AutonomousCommandGroup;
+import org.usfirst.frc5114.FentonRobotBuilderJava.commands.AutonLiftRear;
+import org.usfirst.frc5114.FentonRobotBuilderJava.commands.AutonDropBinArm;
+import org.usfirst.frc5114.FentonRobotBuilderJava.commands.AutonLiftBinArm;
+import org.usfirst.frc5114.FentonRobotBuilderJava.commands.AutonLiftFront;
+import org.usfirst.frc5114.FentonRobotBuilderJava.commands.AutonDropFront;
+import org.usfirst.frc5114.FentonRobotBuilderJava.commands.AutonDropRear;
 import org.usfirst.frc5114.FentonRobotBuilderJava.commands.DriveEast;
 import org.usfirst.frc5114.FentonRobotBuilderJava.commands.DriveNorth;
 import org.usfirst.frc5114.FentonRobotBuilderJava.commands.DriveSouth;
@@ -72,33 +76,72 @@ public class AutonCommand
 			case StopDriving:
 			{
 				TimedDriveStop command = new TimedDriveStop();				
-				command.setTime(time);  // change method name for consistency
+				command.setTime(time);
 				genericCommand = command;
 				break;
 			}
 			case DropBinArm:
-				System.out.println("Command " + commandType + " not implemented yet."); break;
+			{
+				// Need to implement AutonDropBinArm command in RobotBuilder
+				AutonDropBinArm command = new AutonDropBinArm();
+				//command.setSpeed(speed);
+				command.setTime(time);
+				genericCommand = command;
+				break;
+			}
 			case DropFrontElevator:
-				System.out.println("Command " + commandType + " not implemented yet."); break;
+			{
+				AutonDropFront command = new AutonDropFront();
+				//command.setSpeed(speed);
+				command.setTime(time);
+				genericCommand = command;
+			
+				System.out.println("Command " + commandType + " not implemented yet.");
+				break;
+			}
 			case DropRearElevator:
-				System.out.println("Command " + commandType + " not implemented yet."); break;
+			{
+				AutonDropRear command = new AutonDropRear();
+				//command.setSpeed(speed);
+				command.setTime(time);
+				genericCommand = command;
+				
+				System.out.println("Command " + commandType + " not implemented yet.");
+				break;
+			}
 			case LiftBinArm:
-				System.out.println("Command " + commandType + " not implemented yet."); break;
+			{
+				// Need to implement AutonLiftBinArm command in RobotBuilder
+				AutonLiftBinArm command = new AutonLiftBinArm();
+				//command.setSpeed(speed);
+				command.setTime(time);
+				genericCommand = command;
+				break;
+			}
 			case LiftFrontElevator:
-				System.out.println("Command " + commandType + " not implemented yet."); break;
+			{
+				AutonLiftFront command = new AutonLiftFront();
+				//command.setSpeed(speed);
+				command.setTime(time);
+				genericCommand = command;
+				break;
+			}
 			case LiftRearElevator:
 			{
 				AutonLiftRear command = new AutonLiftRear();
-//				command.setSpeed(speed);
+				//command.setSpeed(speed);
 				command.setTime(time);
 				genericCommand = command;
 				break;
 			}
 			case StopBinArm:
+				// stop commands were never implemented because elevator commands are timed, and the elevator is stopped when the time expires
 				System.out.println("Command " + commandType + " not implemented yet."); break;
 			case StopFrontElevator:
+				// stop commands were never implemented because elevator commands are timed, and the elevator is stopped when the time expires
 				System.out.println("Command " + commandType + " not implemented yet."); break;
 			case StopRearElevator:
+				// stop commands were never implemented because elevator commands are timed, and the elevator is stopped when the time expires
 				System.out.println("Command " + commandType + " not implemented yet."); break;
 			default:
 				break;

@@ -21,12 +21,12 @@ import org.usfirst.frc5114.FentonRobotBuilderJava.Robot;
 public class  AutonLiftFront extends Command {
 	Timer t = new Timer();
 	double lt = 0.0;
+	
 	public void setTime (double liftTime)
 	{
 		lt = liftTime;
 	}
 	
-
     public AutonLiftFront() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -63,12 +63,12 @@ public class  AutonLiftFront extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.backElevator.eh.cushyStop();
+    	Robot.frontElevator.eh.cushyStop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	Robot.backElevator.eh.cushyStop();
+    	Robot.frontElevator.eh.cushyStop();
     }
 }
