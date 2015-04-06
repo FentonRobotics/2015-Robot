@@ -5,7 +5,6 @@
 
 package org.usfirst.frc5114.AutonCommand;
 
-import org.usfirst.frc5114.FentonRobotBuilderJava.commands.AutonomousCommandGroup;
 import org.usfirst.frc5114.FentonRobotBuilderJava.commands.AutonLiftRear;
 import org.usfirst.frc5114.FentonRobotBuilderJava.commands.AutonDropBinArm;
 import org.usfirst.frc5114.FentonRobotBuilderJava.commands.AutonLiftBinArm;
@@ -19,6 +18,7 @@ import org.usfirst.frc5114.FentonRobotBuilderJava.commands.DriveWest;
 import org.usfirst.frc5114.FentonRobotBuilderJava.commands.TimedDriveStop;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class AutonCommand
 {
@@ -36,7 +36,7 @@ public class AutonCommand
 	 * @param syncType Run the command sequentially or in parallel with existing commands
 	 * @param autonCommandGroup Command group to add the command to when it has been created
 	 */
-	public AutonCommand(RobotCommandType commandType, double speed, double time, CommandSyncType syncType, AutonomousCommandGroup autonCommandGroup)
+	public AutonCommand(RobotCommandType commandType, double speed, double time, CommandSyncType syncType, CommandGroup autonCommandGroup)
 	{
 		Command genericCommand = null;
 		switch (commandType)
@@ -175,7 +175,7 @@ public class AutonCommand
 	 * BD - Drop Bin Arm
 	 * BS - Stop Bin Arm
 	 */
-	public AutonCommand(String autonCommandString, AutonomousCommandGroup autonCommandGroup)
+	public AutonCommand(String autonCommandString, CommandGroup autonCommandGroup)
 	{
 		System.out.println("Auton Command String: " + autonCommandString);
 		try
