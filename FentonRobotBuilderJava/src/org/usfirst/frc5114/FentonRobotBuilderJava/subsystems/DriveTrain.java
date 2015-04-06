@@ -64,7 +64,7 @@ public class DriveTrain extends Subsystem {
 	 }
 
 	 // This makes it possible to drive the robot more slowly than usual.
-	 public void enableCreaperMode (boolean enableCreaper)
+	 public void enableCreeperMode (boolean enableCreaper)
 	 {
 		 enableCreaperMode = enableCreaper;
 	 }

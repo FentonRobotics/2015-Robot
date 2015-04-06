@@ -233,7 +233,7 @@ Children:
           name: Command
           type: Command
           validators: &id009 [TypeDropdownSelected]
-          value: EnableCreaperMode
+          value: EnableCreeperMode
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: &id010 [whileHeld, whenPressed, whenReleased]
           default: whileHeld
@@ -712,7 +712,7 @@ Children:
   - Children: []
     Properties:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: DriveTrain}
+        name: Requires, type: Subsystem, validators: null, value: None}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
@@ -760,11 +760,11 @@ Children:
   - Children: []
     Properties:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: DriveTrain}
+        name: Requires, type: Subsystem, validators: null, value: None}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
-    Name: EnableCreaperMode
+    Name: EnableCreeperMode
   Properties: {}
   Base: Commands
   Name: Commands
