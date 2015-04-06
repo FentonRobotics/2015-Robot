@@ -53,19 +53,35 @@ public class DriveTrain extends Subsystem {
 	 // Put methods for controlling this subsystem
 	 // here. Call these from Commands.
     
+     boolean allowPerpMvmt = false;
+     boolean enableCreaperMode = false;
+     
      // This function makes perpendicular drive only possible
      // when pressing button 2 on right joystick
-     boolean allowPerpMvmt = false;
 	 public void changeToAllowPerpDrive (boolean allowPerpMovement)
 	 {
 		 allowPerpMvmt = allowPerpMovement;
 	 }
+
+	 // This makes it possible to drive the robot more slowly than usual.
+	 public void enableCreaperMode (boolean enableCreaper)
+	 {
+		 enableCreaperMode = enableCreaper;
+	 }
+	 
 	 public void takeJoystickInputs(Joystick left, Joystick right)
 	 {
+		 double inputScaleValue = 0.75;
+		 
+		 // if we are in creaper mode
+		 if (enableCreaperMode)
+			 inputScaleValue = 0.25;
+		 
 		// our robot is like 2 tank drive robots
 		// with the right drive disabled on the second tank
 		// so we pass in 0.0 for the right side
-		robotDrive21.tankDrive(left, right, true);  // square the inputs
+		robotDrive21.tankDrive(left.getY() * inputScaleValue, right.getY() * inputScaleValue, false);
+		
 //		if (allowPerpMvmt)
 //		{
 			robotDrive2Perpendicular.tankDrive(right.getX(), 0.0, true); // square the inputs

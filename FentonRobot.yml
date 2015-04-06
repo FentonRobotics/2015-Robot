@@ -233,7 +233,7 @@ Children:
           name: Command
           type: Command
           validators: &id009 [TypeDropdownSelected]
-          value: AllowPerpMovement
+          value: EnableCreaperMode
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: &id010 [whileHeld, whenPressed, whenReleased]
           default: whileHeld
@@ -757,11 +757,19 @@ Children:
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
     Name: AutonDropFront
+  - Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: DriveTrain}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command
+    Name: EnableCreaperMode
   Properties: {}
   Base: Commands
   Name: Commands
 Properties:
-  Eclipse Workspace: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\roboticsadmin\workspace',
+  Eclipse Workspace: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\tomm\workspace',
     extension: null, folder: true, name: Eclipse Workspace, validators: null, value: 'C:\github\2015-Robot'}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
