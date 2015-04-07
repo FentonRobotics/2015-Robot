@@ -54,7 +54,7 @@ public class DriveTrain extends Subsystem {
 	 // here. Call these from Commands.
     
      boolean allowPerpMvmt = false;
-     boolean enableCreaperMode = false;
+     boolean enableCreeperMode = false;
      
      // This function makes perpendicular drive only possible
      // when pressing button 2 on right joystick
@@ -66,7 +66,7 @@ public class DriveTrain extends Subsystem {
 	 // This makes it possible to drive the robot more slowly than usual.
 	 public void enableCreeperMode (boolean enableCreaper)
 	 {
-		 enableCreaperMode = enableCreaper;
+		 enableCreeperMode = enableCreaper;
 	 }
 	 
 	 public void takeJoystickInputs(Joystick left, Joystick right)
@@ -74,7 +74,7 @@ public class DriveTrain extends Subsystem {
 		 double inputScaleValue = 0.75;
 		 
 		 // if we are in creaper mode
-		 if (enableCreaperMode)
+		 if (enableCreeperMode)
 			 inputScaleValue = 0.25;
 		 
 		// our robot is like 2 tank drive robots
