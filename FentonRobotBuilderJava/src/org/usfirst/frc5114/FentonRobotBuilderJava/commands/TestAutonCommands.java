@@ -25,19 +25,47 @@ public class TestAutonCommands extends CommandGroup {
     	
 		// Test
     	System.out.println("Begin TestAutonCommands Command Group");
+
+    	// We already know that driving commands work
     	
     	// Drive South for 1s at 60%
-    	new AutonCommand("DS,0.6,1.0,S", this);
+    	//new AutonCommand("DS,0.6,1.0,S", this);
     	
 		// Stop drive train for 0.125s
-		new AutonCommand("D0,0.0,0.125,S", this);
+		//new AutonCommand("D0,0.0,0.125,S", this);
     	
     	// Drive North for 1s at 60%
-    	new AutonCommand("DN,0.6,1.0,S", this);
+    	//new AutonCommand("DN,0.6,1.0,S", this);
     	
 		// Stop drive train for 0.125s
-		new AutonCommand("D0,0.0,0.125,S", this);
-		
+		//new AutonCommand("D0,0.0,0.125,S", this);
+
+    	// Test the rest of the commands
+    	// even though we are passing in the speed here
+    	// the speed is ignored, and the default elevator speed 
+    	// for each lift / bin subsystem is utilized
+    	
+    	// Test bin lift, stop and drop
+    	new AutonCommand("BL,1.0,1.0,S", this);    	
+    	
+    	new AutonCommand("BS,0.0,0.5,S", this);
+    	
+    	new AutonCommand("BD,1.0,1.0,S", this);
+    	
+    	// Test front lift, stop and drop
+    	new AutonCommand("FL,0.75,1.0,S", this);    	
+    	
+    	new AutonCommand("FS,0.0,0.5,S", this);
+    	
+    	new AutonCommand("FD,0.75,1.0,S", this);
+
+    	// Test back lift, stop and drop
+    	new AutonCommand("BL,0.75,1.0,S", this);    	
+    	
+    	new AutonCommand("BS,0.0,0.5,S", this);
+    	
+    	new AutonCommand("BD,0.75,1.0,S", this);
+    	
 		System.out.println("End TestAutonCommands Command Group");		
     }
 }
