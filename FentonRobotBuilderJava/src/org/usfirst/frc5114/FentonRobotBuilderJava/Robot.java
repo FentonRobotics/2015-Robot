@@ -19,6 +19,7 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc5114.FentonRobotBuilderJava.commands.*;
 import org.usfirst.frc5114.FentonRobotBuilderJava.subsystems.*;
@@ -119,6 +120,7 @@ public class Robot extends IterativeRobot {
         autoChooser.addObject("NoAutonPoints", new NoAutonPoints());
         autoChooser.addObject("MoveBinAndToteToAutoZone", new MoveBinAndToteToAutoZone());
         autoChooser.addObject("MoveRobotToAutoZone", new MoveRobotToAutoZone());
+        SmartDashboard.putData("Autonomous mode chooser", autoChooser);
     }
 
     /**
