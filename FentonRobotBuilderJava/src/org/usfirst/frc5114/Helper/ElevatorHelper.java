@@ -111,9 +111,15 @@ public class ElevatorHelper
 		// calculate ramped speed based upon time
 		double speed = directionMultiplier * Math.min(currentTime / rampTimeInSeconds, 1.0) * maxElevatorSpeed;
 		
-		if (loggingEnabled)
-			System.out.println("Timer: " + String.format("%.3f", currentTime) + " Setting motor output to: " + String.format("%.3f", speed));		
-				
+		if (loggingEnabled && direction == Direction.DOWN)
+		{
+			//System.out.println("MAXELEVATORSPEED " + maxElevatorSpeed);
+			System.out.println("RAMPTIME " + rampTimeInSeconds);
+			System.out.println("CURRENTTIME " + currentTime);
+			//System.out.println("SPEED " + String.format("%.3f", speed));		
+			System.out.println("SPEED " + speed);		
+		}
+		
 		speedController.set(speed);
 	}
 	

@@ -41,11 +41,13 @@ public class  AutonDropRear extends Command {
  protected void initialize() {
  	t.reset();
  	t.start();
+ 	Robot.backElevator.eh.initialize();
  }
 
  // Called repeatedly when this Command is scheduled to run
  protected void execute() {
- 	Robot.backElevator.eh.drop();
+	 //Robot.backElevator.eh.enableLogging();
+	 Robot.backElevator.eh.drop();
  }
 
  // Make this return true when this Command no longer needs to run execute()

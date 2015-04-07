@@ -39,16 +39,33 @@ public class AutonomousCommandGroup extends CommandGroup {
     			// Test
     			
     	    	// Drive South for 1s at 60%
-    	    	new AutonCommand("DS,0.6,1.0,S", this);
+    	    	// new AutonCommand("DS,0.6,1.0,S", this);
     	    	
     			// Stop drive train for 0.125s
-    			new AutonCommand("D0,0.0,0.125,S", this);
+    			// new AutonCommand("D0,0.0,0.125,S", this);
     	    	
     	    	// Drive North for 1s at 60%
-    	    	new AutonCommand("DN,0.6,1.0,S", this);
+    	    	// new AutonCommand("DN,0.6,1.0,S", this);
     	    	
     			// Stop drive train for 0.125s
-    			new AutonCommand("D0,0.0,0.125,S", this);
+    			// new AutonCommand("D0,0.0,0.125,S", this);
+    			
+    			// Test Bin lift, stop, and drop
+    			new AutonCommand("BL,1.0,1.0,S", this);
+    			
+    			new AutonCommand("BD,1.0,1.0,S", this);
+    			
+    			// Test front lift, stop, and drop
+    			new AutonCommand("FL,0.75,1.0,S", this);
+    			    			
+    			new AutonCommand("FD,0.75,1.0,S", this);
+    			
+    			System.out.println("case 0");
+    			
+    			// Test rear lift, stop, and drop
+    			new AutonCommand("RL,0.75,1.0,S", this);
+    			
+    			new AutonCommand("RD,0.75,1.0,S", this);
     			
     	    	break;
     		}
