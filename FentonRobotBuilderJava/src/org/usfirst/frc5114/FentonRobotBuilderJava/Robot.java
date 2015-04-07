@@ -116,9 +116,9 @@ public class Robot extends IterativeRobot {
         // This is where the autonomous commands are created, and so this is where the constructor code runs for them
         autoChooser.addDefault("LiftBinAndGetCloseToDriver", new LiftBinAndGetCloseToDriver()); 
         autoChooser.addObject("TestAutonCommands", new TestAutonCommands());
-        autoChooser.addObject("NoAutonPoints", new TestAutonCommands());
-        autoChooser.addObject("MoveBinAndToteToAutoZone", new TestAutonCommands());
-        autoChooser.addObject("MoveRobotToAutoZone", new TestAutonCommands());
+        autoChooser.addObject("NoAutonPoints", new NoAutonPoints());
+        autoChooser.addObject("MoveBinAndToteToAutoZone", new MoveBinAndToteToAutoZone());
+        autoChooser.addObject("MoveRobotToAutoZone", new MoveRobotToAutoZone());
     }
 
     /**
