@@ -33,7 +33,7 @@ public class LiftBinAndGetCloseToDriver extends CommandGroup {
 		new AutonCommand("RS,0.0,0.125,S", this);
 		
 		// Drive south 60% 3.35s
-		new AutonCommand("DS,0.6,2.73,S", this);
+		new AutonCommand("DS,0.6,1.001,S", this);
 		
 		// Stop drive train for 0.125s
 		new AutonCommand("RL,0.0,0.125,S", this);

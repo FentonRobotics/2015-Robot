@@ -48,23 +48,23 @@ public class TestAutonCommands extends CommandGroup {
     	// Test bin lift, stop and drop
     	new AutonCommand("BL,1.0,1.0,S", this);    	
     	
-    	new AutonCommand("BS,0.0,0.5,S", this);
+    	//new AutonCommand("BS,0.0,0.5,S", this);
     	
     	new AutonCommand("BD,1.0,1.0,S", this);
     	
     	// Test front lift, stop and drop
     	new AutonCommand("FL,0.75,1.0,S", this);    	
     	
-    	new AutonCommand("FS,0.0,0.5,S", this);
+    	//new AutonCommand("FS,0.0,0.5,S", this);
     	
     	new AutonCommand("FD,0.75,1.0,S", this);
 
     	// Test back lift, stop and drop
-    	new AutonCommand("BL,0.75,1.0,S", this);    	
+    	new AutonCommand("RL,0.75,1.0,S", this);    	
     	
-    	new AutonCommand("BS,0.0,0.5,S", this);
+    	//new AutonCommand("RS,0.0,0.5,S", this);
     	
-    	new AutonCommand("BD,0.75,1.0,S", this);
+    	new AutonCommand("RD,0.75,1.0,S", this);
     	
 		System.out.println("End TestAutonCommands Command Group");		
     }
