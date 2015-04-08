@@ -82,14 +82,15 @@ public class DriveTrain extends Subsystem {
 		// so we pass in 0.0 for the right side
 		robotDrive21.tankDrive(left.getY() * inputScaleValue, right.getY() * inputScaleValue, false);
 		
-//		if (allowPerpMvmt)
-//		{
-			robotDrive2Perpendicular.tankDrive(right.getX(), 0.0, true); // square the inputs
-//		}
-//		else
-//		{
-//			robotDrive2Perpendicular.tankDrive(0.0, 0.0, true); // square the inputs
-//		}
+		if (allowPerpMvmt)
+		{
+			robotDrive2Perpendicular.tankDrive(right.getX(), 0.0, false); // square the inputs
+			robotDrive21.tankDrive(0.0, 0.0, false);
+		}
+		else
+		{
+			robotDrive2Perpendicular.tankDrive(0.0, 0.0, false); // square the inputs
+		}
 	 }
 	
 	 // This is basically a pass through to the tank drive which is already built for us
