@@ -142,16 +142,16 @@ public class AutonomousCommandGroup extends CommandGroup {
     			// Auton #5, case 4
     			
     			// Lift rear for 1s
-    			new AutonCommand("RL,0.75,1.0,S", this);
+    			new AutonCommand("RL,0.75,4.0,S", this);
     			
     			// Stop Rear Lift
     			new AutonCommand("RS,0.0,0.125,S", this);
     			
-    			// Drive south 60% 3.35s
-    			new AutonCommand("DS,0.6,2.73,S", this);
+    			/* // Drive south 60% 3.35s
+    			new AutonCommand("DS,0.6,1.001,S", this);
     			
     			// Stop drive train for 0.125s
-    			new AutonCommand("RL,0.0,0.125,S", this);
+    			new AutonCommand("RL,0.0,0.125,S", this); */
 
     			break;
     		}
